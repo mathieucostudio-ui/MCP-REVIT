@@ -25,7 +25,7 @@ namespace revit_mcp_plugin.UI
 
         private void DetectCurrentApiKey()
         {
-            string envKey = Environment.GetEnvironmentVariable("ANTHROPIC_API_KEY");
+            string envKey = Environment.GetEnvironmentVariable("OPENROUTER_API_KEY");
             string filePath = GetApiKeyFilePath();
             string fileKey = null;
 
@@ -116,9 +116,9 @@ namespace revit_mcp_plugin.UI
             {
                 if (EnvVarRadio.IsChecked == true)
                 {
-                    Environment.SetEnvironmentVariable("ANTHROPIC_API_KEY", apiKey, EnvironmentVariableTarget.User);
+                    Environment.SetEnvironmentVariable("OPENROUTER_API_KEY", apiKey, EnvironmentVariableTarget.User);
                     MessageBox.Show(
-                        "API key saved to environment variable ANTHROPIC_API_KEY.\nA Revit restart may be needed for changes to take effect.",
+                        "API key saved to environment variable OPENROUTER_API_KEY.\nA Revit restart may be needed for changes to take effect.",
                         "API Key Saved", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else if (FileRadio.IsChecked == true)

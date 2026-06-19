@@ -16,7 +16,7 @@ namespace revit_mcp_plugin.UI
     {
         private readonly List<JObject> _conversationHistory = new List<JObject>();
         private string _apiKey;
-        private const string ANTHROPIC_URL = "https://api.anthropic.com/v1/messages";
+        private const string OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
         private string _model = "claude-sonnet-4-6";
         private const int MCP_PORT = 8080;
         private CancellationTokenSource _cts;
@@ -56,13 +56,13 @@ RULES:
         {
             string claudeDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".claude");
 
-            // Try Anthropic API key (env → file)
-            _apiKey = Environment.GetEnvironmentVariable("ANTHROPIC_API_KEY");
+            // Try OpenRouter API key (env → file)
+            _apiKey = Environment.GetEnvironmentVariable("OPENROUTER_API_KEY");
             if (string.IsNullOrEmpty(_apiKey))
             {
                 try
                 {
-                    string path = Path.Combine(claudeDir, "api_key.txt");
+                    string path = Path.Combine(claudeDir, "openrouter_api_key.txt");
                     if (File.Exists(path)) _apiKey = File.ReadAllText(path).Trim();
                 }
                 catch { }
@@ -74,9 +74,9 @@ RULES:
             if (string.IsNullOrEmpty(_apiKey))
             {
                 return "API key not configured.\n\n" +
-                       "Set your Anthropic API key:\n" +
-                       "  File: %USERPROFILE%\\.claude\\api_key.txt\n" +
-                       "  or env variable: ANTHROPIC_API_KEY=sk-ant-...";
+                       "Set your OpenRouter API key:\n" +
+                       "  File: %USERPROFILE%\\.claude\\openrouter_openrouter_api_key.txt\n" +
+                       "  or env variable: OPENROUTER_API_KEY=sk-...";
             }
 
             _conversationHistory.Add(new JObject { ["role"] = "user", ["content"] = userMessage });
@@ -216,11 +216,11 @@ RULES:
             {
                 _cts?.Token.ThrowIfCancellationRequested();
 
-                var request = (HttpWebRequest)WebRequest.Create(ANTHROPIC_URL);
+                var request = (HttpWebRequest)WebRequest.Create(OPENROUTER_URL);
                 request.Method = "POST";
                 request.ContentType = "application/json";
                 request.Headers.Add("x-api-key", _apiKey);
-                request.Headers.Add("anthropic-version", "2023-06-01");
+                request.Headers.Add("Authorization", $"Bearer {_apiKey}");
                 request.Timeout = 180000;
 
                 using (var stream = await Task.Factory.FromAsync(request.BeginGetRequestStream, request.EndGetRequestStream, null))

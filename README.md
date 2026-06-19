@@ -16,7 +16,7 @@ mcp-servers-for-revit enables AI clients like Claude, Cline, and other MCP-compa
 - **124 MCP tools** — project info, model health, clash detection, element CRUD, batch operations, data export (PDF/DWG/IFC/CSV)
 - **Revit 2023, 2024, 2025, 2026, 2027** — fully tested on all five versions
 - **Language-independent** — works with any Revit UI language (English, Italian, French, German, etc.) using BuiltInCategory resolution
-- **Built-in Claude chat panel** — dockable panel inside Revit with direct AI access (Anthropic API, extended thinking enabled)
+- **Built-in Claude chat panel** — dockable panel inside Revit with direct AI access (OpenRouter API, extended thinking enabled)
 - **Real-time execution** — AI requests are executed immediately on the active model via TCP/JSON-RPC 2.0
 - **Extensible command set** — add new commands without modifying the plugin core
 
@@ -51,7 +51,7 @@ flowchart LR
 | **Node.js** | 18+ (for the MCP server) |
 | **Autodesk Revit** | 2023, 2024, 2025, 2026, or 2027 |
 | **OS** | Windows 10/11 (Revit is Windows-only) |
-| **Anthropic API key** (optional) | Required only for the built-in chat panel. Set via `%USERPROFILE%\.claude\api_key.txt` or env `ANTHROPIC_API_KEY` |
+| **OpenRouter API key** (optional) | Required only for the built-in chat panel. Set via `%USERPROFILE%\.claude\api_key.txt` or env `ANTHROPIC_API_KEY` |
 
 ### To build from source
 
@@ -310,7 +310,7 @@ All tools work across all versions. The command set uses compile-time constants 
 
 ## Built-in Chat Panel
 
-The Revit plugin includes a dockable chat panel that connects directly to the Anthropic API. It provides a Claude chat interface inside Revit where the AI can autonomously execute tools on the active model.
+The Revit plugin includes a dockable chat panel that connects directly to the OpenRouter API. It provides a Claude chat interface inside Revit where the AI can autonomously execute tools on the active model.
 
 - **Model**: Claude Sonnet 4.6 with extended thinking (10K token budget)
 - **System prompt**: Autonomous mode — Claude executes actions directly without unnecessary confirmations
@@ -327,7 +327,7 @@ The Revit plugin includes a dockable chat panel that connects directly to the An
 | **`send_code_to_revit`** | May fail if third-party addins cause assembly conflicts (e.g., duplicate DLL references) |
 | **Parameter names are localized** | Revit parameter names depend on UI language. Use BuiltInCategory names (e.g., `OST_Walls`) for categories. The command set resolves categories automatically, but parameter names must match the Revit language |
 | **No streaming** | Tool results are returned as a single response; large results (e.g., exporting thousands of elements) may take time |
-| **Anthropic API key** | The built-in chat panel requires an Anthropic API key. External MCP clients (Claude Code, Claude Desktop) use their own authentication |
+| **OpenRouter API key** | The built-in chat panel requires an OpenRouter API key. External MCP clients (Claude Code, Claude Desktop) use their own authentication |
 
 ## Troubleshooting
 

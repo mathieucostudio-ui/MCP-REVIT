@@ -70,7 +70,7 @@ dotnet --list-sdks
 
 ### Step 1: Download the Release
 
-1. Go to the [Releases](https://github.com/LuDattilo/revit-mcp-server/releases) page
+1. Go to the [Releases](https://github.com/MathieuCo/revit-mcp-server/releases) page
 2. Download the ZIP matching your Revit version:
    - `mcp-servers-for-revit-vX.Y.Z-Revit2023.zip`
    - `mcp-servers-for-revit-vX.Y.Z-Revit2024.zip`
@@ -128,7 +128,7 @@ Addins/<version>/
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/LuDattilo/revit-mcp-server.git
+git clone https://github.com/MathieuCo/revit-mcp-server.git
 cd mcp-servers-for-revit
 ```
 
@@ -235,7 +235,7 @@ Configure the MCP server with:
 
 ## API Key Configuration (Chat Panel)
 
-The built-in chat panel in Revit requires an **Anthropic** API key to work. This is only needed for the chat panel — using it through Claude Desktop/Claude Code does not require additional configuration.
+The built-in chat panel in Revit requires an **OpenRouter** API key to work. This is only needed for the chat panel — using it through Claude Desktop/Claude Code does not require additional configuration.
 
 ### Obtaining an API Key
 
@@ -369,7 +369,7 @@ dotnet build mcp-servers-for-revit.sln -c "Debug R26"
 
 ### "API key not configured" error in the chat panel
 
-- Configure the Anthropic API key using one of the methods described above
+- Configure the OpenRouter API key using one of the methods described above
 - Restart Revit after setting the environment variable
 - Verify that the `api_key.txt` file contains only the key (`sk-ant-...`), with no extra spaces or newlines
 

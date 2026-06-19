@@ -16,7 +16,7 @@
         <!-- Header -->
         <StackPanel Grid.Row="0" Margin="0,0,0,15">
             <TextBlock Text="API Key" FontSize="22" FontWeight="SemiBold" Foreground="#333333"/>
-            <TextBlock Text="Configure the Anthropic API key for the built-in chat panel"
+            <TextBlock Text="Configure the OpenRouter API key for the built-in chat panel"
                        Foreground="#666666" Margin="0,5,0,0"/>
         </StackPanel>
 
@@ -76,7 +76,7 @@
                              FontSize="13" Foreground="#333333">
                     <TextBlock TextWrapping="Wrap">
                         <Run Text="File ("/>
-                        <Run x:Name="ApiKeyFilePathRun" Text="%USERPROFILE%\.claude\api_key.txt"/>
+                        <Run x:Name="ApiKeyFilePathRun" Text="%USERPROFILE%\.claude\openrouter_api_key.txt"/>
                         <Run Text=")"/>
                     </TextBlock>
                 </RadioButton>
