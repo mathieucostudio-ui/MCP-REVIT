@@ -25,7 +25,7 @@ if ($_commonPath -and (Test-Path $_commonPath)) {
     . $_commonPath
 } else {
     # Inline fallback for irm | iex usage
-    $REPO          = 'LuDattilo/revit-mcp-server'
+    $REPO          = 'mathieucostudio-ui/MCP-REVIT'
     $PLUGIN_NAME   = 'mcp-servers-for-revit'
     $PLUGIN_FOLDER = 'revit_mcp_plugin'
     $NPM_PACKAGE   = 'mcp-server-for-revit'

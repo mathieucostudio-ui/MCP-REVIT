@@ -50,6 +50,7 @@
     powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/LuDattilo/revit-mcp-server/main/scripts/install.ps1 | iex"
     # One-liner install directly from GitHub
 #>
+& {
 param(
     [ValidateSet('2023','2024','2025','2026','2027')]
     [string]$RevitVersion,
@@ -79,7 +80,7 @@ if ($_commonPath -and (Test-Path $_commonPath)) {
     . $_commonPath
 } else {
     # Inline fallback: constants
-    $REPO          = 'LuDattilo/revit-mcp-server'
+    $REPO          = 'mathieucostudio-ui/MCP-REVIT'
     $PLUGIN_NAME   = 'mcp-servers-for-revit'
     $PLUGIN_FOLDER = 'revit_mcp_plugin'
     $NPM_PACKAGE   = 'mcp-server-for-revit'
@@ -740,3 +741,4 @@ Write-Host ""
 Write-Host "  Docs:   https://github.com/$REPO#readme"   -ForegroundColor DarkGray
 Write-Host "  Issues: https://github.com/$REPO/issues"   -ForegroundColor DarkGray
 Write-Host ""
+}
