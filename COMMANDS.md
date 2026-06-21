@@ -36,9 +36,9 @@
 
 ### Chat Panel (inside Revit)
 The plugin includes a dockable chat panel accessible via **"MCP Panel"** in the ribbon.
-- Calls Anthropic API with 16 Revit tool definitions
+- Calls OpenRouter API with 16 Revit tool definitions
 - Executes commands on the model via JSON-RPC (localhost:8080)
-- API key: set `ANTHROPIC_API_KEY` env var or create `%USERPROFILE%\.claude\api_key.txt`
+- API key: set `OPENROUTER_API_KEY` env var or create `%USERPROFILE%\.claude\openrouter_api_key.txt`
 
 ---
 
@@ -684,10 +684,10 @@ These 15 tools were added based on research of the most commonly automated BIM t
 The dockable panel inside Revit provides a Claude-style chat interface:
 
 - **UI**: Light theme matching claude.ai (white background, pill-shaped input, Claude orange branding)
-- **API**: Calls Anthropic API (claude-sonnet-4-20250514) with 16 MCP tool definitions
+- **API**: Calls OpenRouter API (claude-sonnet-4-20250514) with 16 MCP tool definitions
 - **Execution**: When Claude decides to use a tool, it sends JSON-RPC to localhost:8080
 - **Multi-turn**: Supports up to 5 tool execution rounds per message
-- **Setup**: API key via `ANTHROPIC_API_KEY` env var or `~/.claude/api_key.txt`
+- **Setup**: API key via `OPENROUTER_API_KEY` env var or `~/.claude/openrouter_api_key.txt`
 
 ### Example prompts for the chat panel:
 - "What project do I have open?"

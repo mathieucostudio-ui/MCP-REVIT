@@ -68,7 +68,7 @@ namespace revit_mcp_plugin.UI
         private static string GetApiKeyFilePath()
         {
             string userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-            return Path.Combine(userProfile, ".claude", "api_key.txt");
+            return Path.Combine(userProfile, ".claude", "openrouter_api_key.txt");
         }
 
         private void ToggleVisibilityButton_Click(object sender, RoutedEventArgs e)

@@ -75,7 +75,7 @@ RULES:
             {
                 return "API key not configured.\n\n" +
                        "Set your OpenRouter API key:\n" +
-                       "  File: %USERPROFILE%\\.claude\\openrouter_openrouter_api_key.txt\n" +
+                       "  File: %USERPROFILE%\\.claude\\openrouter_api_key.txt\n" +
                        "  or env variable: OPENROUTER_API_KEY=sk-...";
             }
 

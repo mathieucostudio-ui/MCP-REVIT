@@ -70,7 +70,7 @@
                            Margin="0,0,0,8"/>
                 <RadioButton x:Name="EnvVarRadio" GroupName="StorageMethod" Margin="0,0,0,8"
                              FontSize="13" Foreground="#333333">
-                    <TextBlock Text="Environment Variable (ANTHROPIC_API_KEY)" TextWrapping="Wrap"/>
+                    <TextBlock Text="Environment Variable (OPENROUTER_API_KEY)" TextWrapping="Wrap"/>
                 </RadioButton>
                 <RadioButton x:Name="FileRadio" GroupName="StorageMethod" Margin="0,0,0,15"
                              FontSize="13" Foreground="#333333">

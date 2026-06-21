@@ -51,7 +51,7 @@ flowchart LR
 | **Node.js** | 18+ (for the MCP server) |
 | **Autodesk Revit** | 2023, 2024, 2025, 2026, or 2027 |
 | **OS** | Windows 10/11 (Revit is Windows-only) |
-| **OpenRouter API key** (optional) | Required only for the built-in chat panel. Set via `%USERPROFILE%\.claude\api_key.txt` or env `ANTHROPIC_API_KEY` |
+| **OpenRouter API key** (optional) | Required only for the built-in chat panel. Set via `%USERPROFILE%\\.claude\\openrouter_api_key.txt` or env `OPENROUTER_API_KEY` |
 
 ### To build from source
 

@@ -239,7 +239,7 @@ The built-in chat panel in Revit requires an **OpenRouter** API key to work. Thi
 
 ### Obtaining an API Key
 
-1. Go to [console.anthropic.com](https://console.anthropic.com)
+1. Go to [openrouter.ai](https://openrouter.ai)
 2. Sign up or log in
 3. Go to **API Keys** and create a new key
 4. Copy the key (it is shown only once)
@@ -248,13 +248,13 @@ The built-in chat panel in Revit requires an **OpenRouter** API key to work. Thi
 
 1. Open **System Settings > Environment Variables**
 2. Add a new user variable:
-   - **Name**: `ANTHROPIC_API_KEY`
+   - **Name**: `OPENROUTER_API_KEY`
    - **Value**: `sk-ant-...` (your API key)
 3. Restart Revit
 
 Or from a terminal (current session):
 ```bash
-setx ANTHROPIC_API_KEY "sk-ant-..."
+setx OPENROUTER_API_KEY "sk-ant-..."
 ```
 
 ### Method 2: Text File
@@ -264,7 +264,7 @@ setx ANTHROPIC_API_KEY "sk-ant-..."
    %USERPROFILE%\.claude\
    ```
 
-2. Create the file `api_key.txt` with your API key:
+2. Create the file `openrouter_api_key.txt` with your API key:
    ```
    %USERPROFILE%\.claude\api_key.txt
    ```
